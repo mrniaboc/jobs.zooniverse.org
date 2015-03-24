@@ -1,0 +1,43 @@
+---
+layout: default
+---
+
+<div class="row">
+
+    <main class="col-md-8">
+        <h1>{{ page.title }}</h1>
+
+        {{ content }}
+
+        <h2>About the Zooniverse</h2>
+
+        <p>The Zooniverse is home to the Internet's largest, most popular and most successful citizen science projects, allowing anyone to become part of real research online. Our back-end systems are built in Ruby on Rails and deployed to Amazon Web Services; our front-end stack includes React, Spine, Angular and Stylus.</p>
+
+        {% if page.location == 'Oxford' %}
+            <p>We're a team of around 12 based at in the centre of Oxford, at the University of Oxford's Department of Physics. The wider Zooniverse team is spread across Oxford, the Adler Planetarium in Chicago, and the University of Minnesota.</p>
+        {% endif %}
+
+    </main>
+
+    <aside class="job-details">
+        <dl>
+            <dt>Location</dt>
+            <dd>Oxford</dd>
+            <dt>Salary</dt>
+            <dd>{{ page.salary }}</dd>
+            <dt>Closing date</dt>
+            <dd>{{ page.close_date | date: "%B %-d, %Y" }}</dd>
+            <dt>How to apply</dt>
+            <dd>
+                {% if page.location == 'Oxford' %}
+                    <p>Send your CV and a covering letter to Chris Lintott at <a href="mailto:cjl@astro.ox.ac.uk">cjl@astro.ox.ac.uk</a></p>
+                    <p><a class="btn btn-primary btn-lg btn-block" href="mailto:cjl@astro.ox.ac.uk">Apply now</a></p>
+                {% else if page.location == 'Chicago' %}
+                    <p>Contact Jen Bundy at <a href="mailto:jbundy@adlerplanetarium.org">jbundy@adlerplanetarium.org</a> for more details.</p>
+                    <p><a class="btn btn-primary btn-lg btn-block" href="mailto:jbundy@adlerplanetarium.org">Apply now</a></p>
+                {% endif %}
+            </dd>
+        </dl>
+    </aside>
+
+</div>

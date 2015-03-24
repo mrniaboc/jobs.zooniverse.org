@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div class="jumbotron">
+    <p>Working for the Zooniverse means working with an interesting group of people on some of the most interesting projects around, while knowing your work will be seen by hundreds of thousands of people and will contribute to the progress of knowledge. It’s a good way to spend your time.</p>
+    <p>The Zooniverse is a collaboration between institutions from the UK and USA; all of our team are employed by one or the other of these partner institutions. This page will be updated to provide up to date summaries of Zooniverse-related jobs. For more information, follow the instructions in each job description or get in touch with the named contact.</p>
+    <p>We hope to hear from you soon.</p>
+</div>
+
+<div class="row">
+
+    <section class="job-section col-md-4">
+        <h3>Jobs in Oxford</h3>
+        <p>The Zooniverse team at the University of Oxford are leading the development of the new Zooniverse platform, as well as projects covering everything from Penguins to Particle Physics, all the way up to disaster relief.</p>
+        <ul class="job-list">
+            {% for job in site.jobs %}
+                {% if job.location == 'Oxford' %}
+                <li><a href="{{ job.url }}">{{ job.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="job-section col-md-4">
+        <h3>Jobs in Chicago</h3>
+        <p>The Adler Planetarium's Citizen Science team includes a dynamic mix of web developers, data scientists, researchers and educators who are responsible for everything from building Zooniverse projects and developing governance tools for volunteers, to running Hack Days and teen programs.</p>
+        <ul class="job-list">
+            {% for job in site.jobs %}
+                {% if job.location == 'Chicago' %}
+                <li><a href="{{ job.url }}">{{ job.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section class="job-section col-md-4">
+        <h3>Jobs in Minnesota</h3>
+        <p>The group in the School of Physics and Astronomy at the University of Minnesota is leading the devopement of the Zooniverse's text-based projects.</p>
+        <ul class="job-list">
+            {% for job in site.jobs %}
+                {% if job.location == 'Minnesota' %}
+                <li><a href="{{ job.url }}">{{ job.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </section>
+
+</div>
+
